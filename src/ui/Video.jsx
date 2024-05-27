@@ -1,4 +1,5 @@
 import React from "react";
+import { TimeService } from "../data/services/TimeService";
 
 export default function Video(props) {
     const video = props.video || {};
@@ -6,8 +7,8 @@ export default function Video(props) {
 
     return (
         <li onClick={() => onClick(video)}>
-            <image src={video.cover} alt={video.title} />
-            <span>{video.duration}</span>
+            <img src={video.cover} alt={video.title} />
+            <span>{TimeService.formatTime(video.duration)}</span>
             <h2>{video.title}</h2>
         </li>
     )
